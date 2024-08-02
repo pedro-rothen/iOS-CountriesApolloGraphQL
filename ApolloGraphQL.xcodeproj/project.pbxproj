@@ -18,6 +18,13 @@
 		EB2D603C2C5B25390043A6EE /* Countries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = EB2D603B2C5B25390043A6EE /* Countries.graphql */; };
 		EB2D603E2C5B27530043A6EE /* schema.graphqls in Resources */ = {isa = PBXBuildFile; fileRef = EB2D603D2C5B27520043A6EE /* schema.graphqls */; };
 		EB2D60412C5B28350043A6EE /* CountryApi in Frameworks */ = {isa = PBXBuildFile; productRef = EB2D60402C5B28350043A6EE /* CountryApi */; };
+		EB2D60472C5C421C0043A6EE /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D60462C5C421C0043A6EE /* Country.swift */; };
+		EB2D604A2C5C42DF0043A6EE /* CountryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D60492C5C42DF0043A6EE /* CountryRepository.swift */; };
+		EB2D604C2C5C43F10043A6EE /* CountryRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D604B2C5C43F10043A6EE /* CountryRepositoryImpl.swift */; };
+		EB2D60502C5C45380043A6EE /* CountryApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D604F2C5C45380043A6EE /* CountryApiService.swift */; };
+		EB2D60522C5C45E70043A6EE /* CountryApiServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D60512C5C45E70043A6EE /* CountryApiServiceImpl.swift */; };
+		EB2D60552C5C89840043A6EE /* GetCountriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D60542C5C89840043A6EE /* GetCountriesUseCase.swift */; };
+		EB2D60572C5C89C50043A6EE /* GetCountriesUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D60562C5C89C50043A6EE /* GetCountriesUseCaseImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +57,13 @@
 		EB2D60292C5B22EF0043A6EE /* ApolloGraphQLUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloGraphQLUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EB2D603B2C5B25390043A6EE /* Countries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Countries.graphql; sourceTree = "<group>"; };
 		EB2D603D2C5B27520043A6EE /* schema.graphqls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
+		EB2D60462C5C421C0043A6EE /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		EB2D60492C5C42DF0043A6EE /* CountryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRepository.swift; sourceTree = "<group>"; };
+		EB2D604B2C5C43F10043A6EE /* CountryRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRepositoryImpl.swift; sourceTree = "<group>"; };
+		EB2D604F2C5C45380043A6EE /* CountryApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryApiService.swift; sourceTree = "<group>"; };
+		EB2D60512C5C45E70043A6EE /* CountryApiServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryApiServiceImpl.swift; sourceTree = "<group>"; };
+		EB2D60542C5C89840043A6EE /* GetCountriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountriesUseCase.swift; sourceTree = "<group>"; };
+		EB2D60562C5C89C50043A6EE /* GetCountriesUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountriesUseCaseImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				EB2D60392C5B24410043A6EE /* Data */,
+				EB2D60432C5C40820043A6EE /* Domain */,
+				EB2D60422C5C40150043A6EE /* Presentation */,
 				EB2D600C2C5B22EC0043A6EE /* ApolloGraphQLApp.swift */,
-				EB2D600E2C5B22EC0043A6EE /* ContentView.swift */,
 				EB2D60102C5B22EE0043A6EE /* Assets.xcassets */,
 				EB2D60122C5B22EE0043A6EE /* Preview Content */,
 			);
@@ -139,6 +154,8 @@
 		EB2D60392C5B24410043A6EE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				EB2D604D2C5C445E0043A6EE /* DataSources */,
+				EB2D60442C5C41BE0043A6EE /* Repositories */,
 				EB2D603A2C5B24480043A6EE /* GraphQL */,
 			);
 			path = Data;
@@ -151,6 +168,74 @@
 				EB2D603D2C5B27520043A6EE /* schema.graphqls */,
 			);
 			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		EB2D60422C5C40150043A6EE /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				EB2D600E2C5B22EC0043A6EE /* ContentView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		EB2D60432C5C40820043A6EE /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				EB2D60532C5C896C0043A6EE /* UseCases */,
+				EB2D60482C5C42720043A6EE /* Repositories */,
+				EB2D60452C5C41CE0043A6EE /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		EB2D60442C5C41BE0043A6EE /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				EB2D604B2C5C43F10043A6EE /* CountryRepositoryImpl.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		EB2D60452C5C41CE0043A6EE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				EB2D60462C5C421C0043A6EE /* Country.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		EB2D60482C5C42720043A6EE /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				EB2D60492C5C42DF0043A6EE /* CountryRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		EB2D604D2C5C445E0043A6EE /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				EB2D604E2C5C446E0043A6EE /* Remote */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		EB2D604E2C5C446E0043A6EE /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				EB2D604F2C5C45380043A6EE /* CountryApiService.swift */,
+				EB2D60512C5C45E70043A6EE /* CountryApiServiceImpl.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		EB2D60532C5C896C0043A6EE /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				EB2D60542C5C89840043A6EE /* GetCountriesUseCase.swift */,
+				EB2D60562C5C89C50043A6EE /* GetCountriesUseCaseImpl.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,8 +378,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB2D604C2C5C43F10043A6EE /* CountryRepositoryImpl.swift in Sources */,
+				EB2D60572C5C89C50043A6EE /* GetCountriesUseCaseImpl.swift in Sources */,
+				EB2D60552C5C89840043A6EE /* GetCountriesUseCase.swift in Sources */,
 				EB2D600F2C5B22EC0043A6EE /* ContentView.swift in Sources */,
+				EB2D60472C5C421C0043A6EE /* Country.swift in Sources */,
+				EB2D604A2C5C42DF0043A6EE /* CountryRepository.swift in Sources */,
 				EB2D600D2C5B22EC0043A6EE /* ApolloGraphQLApp.swift in Sources */,
+				EB2D60502C5C45380043A6EE /* CountryApiService.swift in Sources */,
+				EB2D60522C5C45E70043A6EE /* CountryApiServiceImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
