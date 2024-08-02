@@ -26,7 +26,7 @@ class CountriesViewModelSpec: AsyncSpec {
             context("when getCountries is called") {
                 it("updates countries from remote ones") {
                     // Arrange
-                    let countries = [Country(name: "Chile", flag: "🇨🇱", capital: "Santiago")]
+                    let countries = [Country(name: "Chile", flag: "🇨🇱", capital: "Santiago", states: [])]
                     mockGetCountriesUseCase.stub = Just(countries)
                         .setFailureType(to: Error.self)
                         .eraseToAnyPublisher()

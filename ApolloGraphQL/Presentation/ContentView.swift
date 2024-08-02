@@ -52,6 +52,11 @@ struct ContentView: View {
                     .font(.title)
                 Text(country.capital)
                     .font(.subheadline)
+                LazyVStack {
+                    ForEach(country.states, id: \.name) { state in
+                        Text(state.name)
+                    }
+                }
             }
         }
     }

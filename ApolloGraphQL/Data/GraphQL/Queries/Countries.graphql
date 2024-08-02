@@ -1,0 +1,11 @@
+query GetCountries {
+  countries {
+    name
+    emoji
+    capital
+    native
+    states {
+        name
+    }
+  }
+}

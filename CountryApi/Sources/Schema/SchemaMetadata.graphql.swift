@@ -16,12 +16,13 @@ public protocol MutableInlineFragment: ApolloAPI.MutableSelectionSet & ApolloAPI
 where Schema == CountryApi.SchemaMetadata {}
 
 public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
-  public static let configuration: any ApolloAPI.SchemaConfiguration.Type = SchemaConfiguration.self
+  public static let configuration: ApolloAPI.SchemaConfiguration.Type = SchemaConfiguration.self
 
   public static func objectType(forTypename typename: String) -> ApolloAPI.Object? {
     switch typename {
     case "Query": return CountryApi.Objects.Query
     case "Country": return CountryApi.Objects.Country
+    case "State": return CountryApi.Objects.State
     default: return nil
     }
   }

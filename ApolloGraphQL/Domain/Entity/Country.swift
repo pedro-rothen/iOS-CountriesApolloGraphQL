@@ -9,4 +9,5 @@ import Foundation
 
 struct Country: Equatable {
     let name, flag, capital: String
+    let states: [State]
 }

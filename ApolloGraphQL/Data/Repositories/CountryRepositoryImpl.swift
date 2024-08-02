@@ -19,7 +19,14 @@ class CountryRepositoryImpl: CountryRepository {
         return remoteDataSource
             .fetchCountries()
             .map {
-                $0.map { Country(name: $0.name, flag: $0.emoji, capital: $0.capital ?? "🙃") }
+                $0.map {
+                    Country(
+                        name: $0.name,
+                        flag: $0.emoji,
+                        capital: $0.capital ?? "🙃",
+                        states: $0.states.map { State(name: $0.name) }
+                    )
+                }
             }.eraseToAnyPublisher()
     }
 }

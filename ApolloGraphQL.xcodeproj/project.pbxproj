@@ -28,6 +28,7 @@
 		EB2D605A2C5C94460043A6EE /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = EB2D60592C5C94460043A6EE /* Quick */; };
 		EB2D605D2C5C94E50043A6EE /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = EB2D605C2C5C94E50043A6EE /* Nimble */; };
 		EB2D60612C5C95D00043A6EE /* CountriesViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D60602C5C95D00043A6EE /* CountriesViewModelSpec.swift */; };
+		EB2D60662C5D1D9A0043A6EE /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D60652C5D1D9A0043A6EE /* State.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		EB2D60542C5C89840043A6EE /* GetCountriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountriesUseCase.swift; sourceTree = "<group>"; };
 		EB2D60562C5C89C50043A6EE /* GetCountriesUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountriesUseCaseImpl.swift; sourceTree = "<group>"; };
 		EB2D60602C5C95D00043A6EE /* CountriesViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModelSpec.swift; sourceTree = "<group>"; };
+		EB2D60652C5D1D9A0043A6EE /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +173,7 @@
 		EB2D603A2C5B24480043A6EE /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
-				EB2D603B2C5B25390043A6EE /* Countries.graphql */,
+				EB2D60642C5D1AA80043A6EE /* Queries */,
 				EB2D603D2C5B27520043A6EE /* schema.graphqls */,
 			);
 			path = GraphQL;
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				EB2D60462C5C421C0043A6EE /* Country.swift */,
+				EB2D60652C5D1D9A0043A6EE /* State.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -259,6 +262,14 @@
 				EB2D60602C5C95D00043A6EE /* CountriesViewModelSpec.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EB2D60642C5D1AA80043A6EE /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+				EB2D603B2C5B25390043A6EE /* Countries.graphql */,
+			);
+			path = Queries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,6 +421,7 @@
 				EB2D604C2C5C43F10043A6EE /* CountryRepositoryImpl.swift in Sources */,
 				EB2D60572C5C89C50043A6EE /* GetCountriesUseCaseImpl.swift in Sources */,
 				EB2D60552C5C89840043A6EE /* GetCountriesUseCase.swift in Sources */,
+				EB2D60662C5D1D9A0043A6EE /* State.swift in Sources */,
 				EB2D600F2C5B22EC0043A6EE /* ContentView.swift in Sources */,
 				EB2D60472C5C421C0043A6EE /* Country.swift in Sources */,
 				EB2D604A2C5C42DF0043A6EE /* CountryRepository.swift in Sources */,
@@ -754,7 +766,7 @@
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.13.0;
+				version = 1.12.2;
 			};
 		};
 		EB2D60582C5C94460043A6EE /* XCRemoteSwiftPackageReference "Quick" */ = {
