@@ -11,7 +11,7 @@ import CountryApi
 import Combine
 
 struct ContentView: View {
-    @StateObject var viewModel: CountryViewModel
+    @StateObject var viewModel: CountriesViewModel
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -58,7 +58,7 @@ struct ContentView: View {
 }
 
 @MainActor
-class CountryViewModel: ObservableObject {
+class CountriesViewModel: ObservableObject {
     let getCountriesUseCase: GetCountriesUseCase
     var cancellables = Set<AnyCancellable>()
 
@@ -90,7 +90,7 @@ class CountryViewModel: ObservableObject {
     let countryRemoteDataSource = CountryApiServiceImpl(client: apiClient)
     let countryRepository = CountryRepositoryImpl(remoteDataSource: countryRemoteDataSource)
     let getCountriesUseCase = GetCountriesUseCaseImpl(repository: countryRepository)
-    let viewModel = CountryViewModel(getCountriesUseCase: getCountriesUseCase)
+    let viewModel = CountriesViewModel(getCountriesUseCase: getCountriesUseCase)
     return ContentView(viewModel: viewModel)
 }
 // ./apollo-ios-cli fetch-schema

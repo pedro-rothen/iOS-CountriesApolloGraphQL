@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Country {
+struct Country: Equatable {
     let name, flag, capital: String
 }
