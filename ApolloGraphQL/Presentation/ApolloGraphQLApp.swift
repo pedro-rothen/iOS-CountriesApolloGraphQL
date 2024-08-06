@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct ApolloGraphQLApp: App {
+    @StateObject var coordinator = CountryCoordinator()
     let viewModel: CountriesViewModel
 
     init() {
@@ -21,7 +22,12 @@ struct ApolloGraphQLApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: viewModel)
+            NavigationStack(path: $coordinator.navigationPath) {
+                ContentView(viewModel: viewModel, coordinator: coordinator)
+                    .navigationDestination(for: Country.self) { country in
+                        CountryDetailView(country: country)
+                    }
+            }
         }
     }
 }

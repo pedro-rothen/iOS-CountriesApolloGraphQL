@@ -12,6 +12,7 @@ import Combine
 
 struct ContentView: View {
     @StateObject var viewModel: CountriesViewModel
+    let coordinator: CountryCoordinator
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -19,19 +20,18 @@ struct ContentView: View {
     ]
 
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                LazyVGrid(columns: columns) {
-                    if let countries = viewModel.countries {
-                        ForEach(countries, id: \.name) { country in
-                            NavigationLink(destination: {
-                                Detail(country: country)
-                            }, label: {
-                                Text(country.flag)
-                                    .font(.largeTitle)
-                                    .frame(width: 100, height: 100)
-                            })
-                        }
+        ScrollView {
+            LazyVGrid(columns: columns) {
+                if let countries = viewModel.countries {
+                    ForEach(countries, id: \.name) { country in
+                        Text(country.flag)
+                            .font(.largeTitle)
+                            .frame(width: 100, height: 100)
+                            .onTapGesture {
+                                coordinator.showCountryDetail(
+                                    country: country
+                                )
+                            }
                     }
                 }
             }
@@ -96,7 +96,7 @@ class CountriesViewModel: ObservableObject {
     let countryRepository = CountryRepositoryImpl(remoteDataSource: countryRemoteDataSource)
     let getCountriesUseCase = GetCountriesUseCaseImpl(repository: countryRepository)
     let viewModel = CountriesViewModel(getCountriesUseCase: getCountriesUseCase)
-    return ContentView(viewModel: viewModel)
+    return ContentView(viewModel: viewModel, coordinator: CountryCoordinator())
 }
 // ./apollo-ios-cli fetch-schema
 // ./apollo-ios-cli generate

@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct State: Equatable {
+struct State: Equatable, Hashable {
     let name: String
 }

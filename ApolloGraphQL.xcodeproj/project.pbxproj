@@ -29,6 +29,8 @@
 		EB2D605D2C5C94E50043A6EE /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = EB2D605C2C5C94E50043A6EE /* Nimble */; };
 		EB2D60612C5C95D00043A6EE /* CountriesViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D60602C5C95D00043A6EE /* CountriesViewModelSpec.swift */; };
 		EB2D60662C5D1D9A0043A6EE /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D60652C5D1D9A0043A6EE /* State.swift */; };
+		EB2D60692C611B230043A6EE /* CountryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D60682C611B230043A6EE /* CountryCoordinator.swift */; };
+		EB2D606D2C61277F0043A6EE /* CountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2D606C2C61277F0043A6EE /* CountryDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		EB2D60562C5C89C50043A6EE /* GetCountriesUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountriesUseCaseImpl.swift; sourceTree = "<group>"; };
 		EB2D60602C5C95D00043A6EE /* CountriesViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModelSpec.swift; sourceTree = "<group>"; };
 		EB2D60652C5D1D9A0043A6EE /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		EB2D60682C611B230043A6EE /* CountryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCoordinator.swift; sourceTree = "<group>"; };
+		EB2D606C2C61277F0043A6EE /* CountryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +131,6 @@
 				EB2D60392C5B24410043A6EE /* Data */,
 				EB2D60432C5C40820043A6EE /* Domain */,
 				EB2D60422C5C40150043A6EE /* Presentation */,
-				EB2D600C2C5B22EC0043A6EE /* ApolloGraphQLApp.swift */,
 				EB2D60102C5B22EE0043A6EE /* Assets.xcassets */,
 				EB2D60122C5B22EE0043A6EE /* Preview Content */,
 			);
@@ -182,7 +185,10 @@
 		EB2D60422C5C40150043A6EE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EB2D60672C611AC60043A6EE /* Coordinator */,
+				EB2D606A2C6127650043A6EE /* Country */,
 				EB2D600E2C5B22EC0043A6EE /* ContentView.swift */,
+				EB2D600C2C5B22EC0043A6EE /* ApolloGraphQLApp.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -270,6 +276,30 @@
 				EB2D603B2C5B25390043A6EE /* Countries.graphql */,
 			);
 			path = Queries;
+			sourceTree = "<group>";
+		};
+		EB2D60672C611AC60043A6EE /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				EB2D60682C611B230043A6EE /* CountryCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		EB2D606A2C6127650043A6EE /* Country */ = {
+			isa = PBXGroup;
+			children = (
+				EB2D606B2C61276C0043A6EE /* Detail */,
+			);
+			path = Country;
+			sourceTree = "<group>";
+		};
+		EB2D606B2C61276C0043A6EE /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				EB2D606C2C61277F0043A6EE /* CountryDetailView.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB2D606D2C61277F0043A6EE /* CountryDetailView.swift in Sources */,
 				EB2D604C2C5C43F10043A6EE /* CountryRepositoryImpl.swift in Sources */,
 				EB2D60572C5C89C50043A6EE /* GetCountriesUseCaseImpl.swift in Sources */,
 				EB2D60552C5C89840043A6EE /* GetCountriesUseCase.swift in Sources */,
@@ -426,6 +457,7 @@
 				EB2D60472C5C421C0043A6EE /* Country.swift in Sources */,
 				EB2D604A2C5C42DF0043A6EE /* CountryRepository.swift in Sources */,
 				EB2D600D2C5B22EC0043A6EE /* ApolloGraphQLApp.swift in Sources */,
+				EB2D60692C611B230043A6EE /* CountryCoordinator.swift in Sources */,
 				EB2D60502C5C45380043A6EE /* CountryApiService.swift in Sources */,
 				EB2D60522C5C45E70043A6EE /* CountryApiServiceImpl.swift in Sources */,
 			);

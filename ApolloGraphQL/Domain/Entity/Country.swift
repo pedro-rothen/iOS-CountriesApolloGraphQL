@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Country: Equatable {
+struct Country: Equatable, Hashable {
     let name, flag, capital: String
     let states: [State]
 }
